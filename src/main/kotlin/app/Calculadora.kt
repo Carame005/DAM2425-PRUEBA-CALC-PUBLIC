@@ -6,7 +6,16 @@ import es.iesraprog2425.pruebaes.ui.IEntradaSalida
 class Calculadora(private val ui: IEntradaSalida) {
 
     private fun pedirNumero(msj: String, msjError: String = "Número no válido!"): Double {
-        return ui.pedirDouble(msj) ?: throw InfoCalcException(msjError)
+        val num = ui.pedirDouble(msj)
+        while (true) {
+            if (num.toLong() == 2L) {
+                break
+            }
+            else{
+                true
+            }
+        }
+        return num
     }
 
     private fun pedirInfo() = Triple(
@@ -28,7 +37,7 @@ class Calculadora(private val ui: IEntradaSalida) {
             try {
                 ui.limpiarPantalla()
                 val (numero1, operador, numero2) = pedirInfo()
-                val resultado = realizarCalculo(numero1, operador, numero2)
+                val resultado = realizarCalculo(numero1, operador, numero2 )
                 ui.mostrar("Resultado: %.2f".format(resultado))
             } catch (e: NumberFormatException) {
                 ui.mostrarError(e.message ?: "Se ha producido un error!")

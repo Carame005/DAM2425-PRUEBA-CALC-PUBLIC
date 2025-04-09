@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "2.1.10"
 }
 
-group = "es.prog2425.prueba"
+group = "es.prog2425.pruebaCalc"
 version = "1.0-SNAPSHOT"
 
 repositories {

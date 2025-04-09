@@ -18,12 +18,14 @@ class Consola : IEntradaSalida {
         return scanner.nextLine().trim()
     }
 
-    override fun pedirDouble(msj: String): Double? {
-        return pedirInfo(msj).replace(',', '.').toDoubleOrNull()
+    override fun pedirDouble(msj: String): Double {
+        if (msj.isNotEmpty()) mostrar(msj, false)
+        return scanner.nextLine().replace(',', '.').toDouble()
     }
 
     override fun pedirEntero(msj: String): Int? {
-        return pedirInfo(msj).toIntOrNull()
+        if (msj.isNotEmpty()) mostrar(msj, false)
+        return scanner.nextInt()
     }
 
     override fun preguntar(msj: String): Boolean {

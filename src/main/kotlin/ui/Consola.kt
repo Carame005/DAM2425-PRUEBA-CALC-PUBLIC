@@ -1,5 +1,5 @@
 package es.iesraprog2425.pruebaes.ui
-
+/**/
 import java.util.Scanner
 
 class Consola : IEntradaSalida {
